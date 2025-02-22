@@ -30,17 +30,15 @@ The application is deployed on an AWS EC2 instance and containerized using Docke
 - Install Docker
 - Install docker compose
 
-[![ban1.png](https://i.postimg.cc/zvwZCxgB/ban1.png)](https://postimg.cc/Wq4Hj6SL)
+![Image](https://github.com/user-attachments/assets/4d96a6f4-6d74-4654-9413-8ec2c4aa4927)
 
-[![ban2.png](https://i.postimg.cc/057s1yBs/ban2.png)](https://postimg.cc/kDMZxqC1)
+![Image](https://github.com/user-attachments/assets/833c5855-b689-4087-89f1-ab69f2822761)
 
-[![bank3.png](https://i.postimg.cc/J0CCHftv/bank3.png)](https://postimg.cc/ZBHM1D8x)
+![Image](https://github.com/user-attachments/assets/381ae114-318c-44a8-b606-58e27fc3438e)
 
-[![compose-file.png](https://i.postimg.cc/FRLQRrF0/compose-file.png)](https://postimg.cc/mzBnpGHr)
+![Image](https://github.com/user-attachments/assets/61b768ea-f403-4268-8fc9-e37091cc025e)
 
-[![compose-file.png](https://i.postimg.cc/FRLQRrF0/compose-file.png)](https://postimg.cc/mzBnpGHr)
-
-[![docker1.png](https://i.postimg.cc/RV9zSxkn/docker1.png)](https://postimg.cc/mhdnjJ2b)
+![Image](https://github.com/user-attachments/assets/360068b0-1a2b-414e-a386-0cddbdd65b05)
 
 ## Setup Instructions
 
@@ -48,7 +46,6 @@ The application is deployed on an AWS EC2 instance and containerized using Docke
 
 ```sh
  git clone https://github.com/deepanshub9/springboot-banking-app.git
-
 ```
 
 ### 2. Install docker, docker compose and provide neccessary permission
@@ -82,13 +79,13 @@ sudo usermod -aG docker $USER && newgrp docker
 ### 6. Run MYSQL container
 
 ```sh
- docker run -itd --name mysql -e MYSQL_ROOT_PASSWORD=Test@123 -e MYSQL_DATABASE=BankDB --network=bankapp mysql
+docker run -itd --name mysql -e MYSQL_ROOT_PASSWORD=Test@123 -e MYSQL_DATABASE=BankDB --network=bankapp mysql
 ```
 
 ### 7. Run Application container
 
 ```sh
- docker run -itd --name BankApp -e SPRING_DATASOURCE_USERNAME="root" -e SPRING_DATASOURCE_URL="jdbc:mysql://mysql:3306/BankDB?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC" -e SPRING_DATASOURCE_PASSWORD="Test@123" --network=bankapp -p 8080:8080 deepanshub9/springboot-bankapp
+docker run -itd --name BankApp -e SPRING_DATASOURCE_USERNAME="root" -e SPRING_DATASOURCE_URL="jdbc:mysql://mysql:3306/BankDB?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC" -e SPRING_DATASOURCE_PASSWORD="Test@123" --network=bankapp -p 8080:8080 deepanshub9/springboot-bankapp
 ```
 
 ### 8. Open port 8080 of your AWS instance and access your application
@@ -120,7 +117,7 @@ docker compose up -d
 http://<public-ip>:8080
 ```
 
-## If you face issues with exiting docker container while running docker compose, run docker compose down and then docker compose up -d.
+<h4> If you face issues with exiting docker container while running docker compose, run docker compose down and then docker compose up -d. </h4>
 
 ## License
 
